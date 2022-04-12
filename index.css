@@ -55,7 +55,10 @@ picture {
 
 label {
     display: block;
+}
 
+button {
+    padding: 0;
 }
 
 h1 {
@@ -68,6 +71,7 @@ h1 {
 .text-dark { color: hsl(var(--clr-dark-cyan))}
 .text-dark-grey {color: hsl(var(--clr-dark-gray-cyan))}
 .text-grey {color: hsl(var(--clr-gray-cyan))}
+.text-cyan {color: hsl(var(--clr-strong-cyan))}
 
 .bg-white { background-color: hsl(var(--clr-white)) }
 .bg-strong-cyan { background-color: hsl(var(--clr-strong-cyan))}
@@ -156,10 +160,16 @@ main {
 .tip-btn {
     border: none;
     font-size: var(--fs-700);
-    max-width: 10rem;
+    max-width: 11rem;
     min-height: 3rem;
     border-radius: 0.5rem;
-    
+    min-width: 4rem;    
+}
+
+.tip-btn:hover {
+    cursor: pointer;
+    background-color: hsl(var(--clr-light-gray-cyan));
+    color: hsl(var(--clr-dark-cyan))
 }
 
 .tip-btn--custom {
@@ -168,10 +178,56 @@ main {
 
 
 button[aria-selected="true"]{
-    background-color: hsl(var(--clr-dark-cyan));
+    background-color: hsl(var(--clr-strong-cyan));
+    color: hsl(var(--clr-dark-cyan))
 }
 
 .calc {
     border-radius: 1rem;
+}
+
+
+.input-text {
+    text-align: right;
+    padding-inline: 1rem;
+    padding-block: 0.5rem; 
+    min-width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    
+    
+        
+}
+
+#people {
+    background: url(./images/icon-person.svg) no-repeat scroll 1rem 50% hsl(var(--clr-very-light-gray-cyan));    
+}
+
+#bill {
+    background: url(./images/icon-dollar.svg) no-repeat scroll 1rem 50% hsl(var(--clr-very-light-gray-cyan));    
+}
+
+.summary {
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.flex--totals {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-reset {
+    min-width: 100%;
+    border: none;
+    font-size: var(--fs-400);   
+    font-family: var(--ff-space);
+    border-radius: 0.3rem;
+    padding-block: 0.4rem;     
+}
+
+label+input::placeholder {
+    color: red;
+    font-size: var(--fs-500);
 }
 

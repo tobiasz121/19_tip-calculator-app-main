@@ -9,11 +9,14 @@ const buttons = document.querySelectorAll('button')
 
 buttons.forEach(button => {
     button.addEventListener('click', event => {
-        event.preventDefault
+        event.preventDefault        
         if (button.ariaSelected === 'true'){
             button.ariaSelected = 'false'
         }
         else {
+            buttons.forEach(button => {
+                button.ariaSelected = 'false'
+            })
             button.ariaSelected = 'true'
         }
     })
