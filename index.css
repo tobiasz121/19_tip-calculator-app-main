@@ -44,6 +44,10 @@ body {
     background-color: hsl(var(--clr-light-gray-cyan));
     font-family: var(--ff-space);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;    
 
 }
 
@@ -110,10 +114,10 @@ h1 {
 }
 
 .container {
-    padding-top: 2rem;
+    padding-block: 2rem;
     min-width: 100%;
     padding-inline:2em;    
-    margin-inline: auto;
+    margin-inline: auto;    
 }
 
 .flow > *:where(:not(:first-child)) {
@@ -136,8 +140,50 @@ h1 {
 }
 
 main {
-    max-width: 100%;
+    max-width: 55rem;
     min-width:320px
+}
+
+@media (min-width:720px){
+    .grid-calc { 
+        --gap: 1rem;  
+        column-gap: 2rem;        
+        grid-template-columns: repeat(2, 1fr);    
+        grid-template-areas: 'bill summary'
+                             'tip summary' 
+                             'people summary'                    
+            ;
+    }
+
+    .grid-calc > div:first-child {
+        grid-area: bill;
+    }
+
+    .grid-calc > div:nth-child(2) {
+        grid-area: tip;
+    }
+
+    .grid-calc > div:nth-child(3) {
+        grid-area: people;
+    }
+
+    .grid-calc > div:last-child {
+        grid-area: summary;
+        margin-top: 0;
+    }
+
+    .header {margin-top: 6rem;}
+
+    .summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .summary-reset {
+        margin-top: auto;
+    }
+
 }
 
 .flow label {
@@ -148,6 +194,7 @@ main {
 .grid-tip {
     grid-template-columns: repeat(2,1fr);
     gap: var(--gap, 1rem);   
+    --gap:1rem
 }
 
 @media (min-width:450px){
@@ -160,7 +207,7 @@ main {
 .tip-btn {
     border: none;
     font-size: var(--fs-700);
-    max-width: 11rem;
+    max-width: 13rem;
     min-height: 3rem;
     border-radius: 0.5rem;
     min-width: 4rem;    
@@ -193,9 +240,7 @@ button[aria-selected="true"]{
     padding-block: 0.5rem; 
     min-width: 100%;
     border: none;
-    border-radius: 0.5rem;
-    
-    
+    border-radius: 0.5rem;   
         
 }
 
@@ -226,8 +271,17 @@ button[aria-selected="true"]{
     padding-block: 0.4rem;     
 }
 
+.summary-reset:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px 0px hsl(var(--clr-strong-cyan)/0.7);
+}
+
 label+input::placeholder {
     color: red;
     font-size: var(--fs-500);
 }
+
+
+
+
 

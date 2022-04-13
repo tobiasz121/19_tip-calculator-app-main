@@ -1,7 +1,8 @@
 const buttons1 = document.querySelectorAll('button.tip-btn')
 const personTotal = document.querySelector('#total-person')
 const personTip = document.querySelector('#tip-person')
-const custombtn = document.querySelector('input.tip-btn') 
+const custombtn = document.querySelector('input.tip-btn')
+const reset = document.querySelector('.summary-reset')
 
 //Totals function used to calculate correct tip and total for person.
 //It takes current target parameter, and type of the target.
@@ -57,6 +58,21 @@ custombtn.addEventListener('keyup', event => {
     })
     const curBtn = event.currentTarget
     totals(curBtn, 'input')
+})
+
+//Reset all the fields and buttons when reset is clicked.
+reset.addEventListener('click', event => {
+    buttons1.forEach(button => {
+        button.ariaSelected = 'false'
+    })
+    document.querySelector('#bill').value=''
+    document.querySelector('#people').value= ''
+    document.querySelector('#bill').placeholder=''
+    document.querySelector('#people').placeholder= ''
+    personTotal.textContent = `$0.00`
+    personTip.textContent = `$0.00`
+       
+    
 })
 
 
