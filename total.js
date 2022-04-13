@@ -22,9 +22,7 @@ const totals = (curBtn, type) => {
     
     //Bill and people fields values, converted to numbers
     const bill = Number( document.querySelector('#bill').value, 10)    
-    const people = Number(document.querySelector('#people').value, 10)
-    const people2 = Number.parseInt(document.querySelector('#people').value, 10)  
-    console.log(people2)
+    const people = Number(document.querySelector('#people').value, 10)   
 
     //Change placeholder values for the input fields, if they're empty. 
     //If they're empty change button state to inactive as well
