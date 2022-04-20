@@ -129,6 +129,10 @@ h1 {
     background-color: hsl(var(--clr-dark-cyan));
 }
 
+.colors--padding-right {
+    padding-right: 3rem;
+}
+
 
 
 /* Layout */
